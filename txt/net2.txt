@@ -1,0 +1,282 @@
+
+In fact, almost inevitably, a number of variables that do
+not contain specific information pertinent to the problem
+being examined are processed. These variables, inserted
+in the model, act as a sort of ‘white noise’ and interfere
+with the generalization ability of the network in the
+testing phase. When this occurs, ANNs lose some
+potential external validity in the testing phase, with
+consequent reduction in the overall accuracy. This
+explains why, in absence of systems able to select
+appropriately the variables containing the pertinent
+information, the performance of ANNs might remain
+below expectations, being only slightly better than
+classical statistical procedures.
+One of the most sophisticated and useful approaches
+to overcoming this limitation is to define the sub-
+group of variables to be selected with another family
+of artificial adaptive systems: evolutionary algorithms
+(EAs).
+Evolutionary algorithms
+At variance with neural networks, which are adaptive
+systems able to discover the optimal hidden rules
+explaining a certain data set, EAs are artificial
+adaptive systems able to find optimal data when fixed
+rules or constraints have to be respected. They are, in
+other words, optimization tools, which become funda-
+mental when the space of possible states in a dynamic
+system tends toward infinity. This is just the case of
+variables selection. Given a certain, large amount of
+dichotomous variables (for example 100), the problem of
+defining the most appropriate subgroup to best solve the
+problem under examination has a very large number of
+possible states and exactly: 2 100 . The computational time
+required to sort all possible variables subsets to submit
+them for ANN processing would be in the order of million
+years; a so-called nonpolynomial hard mathematical
+problem.
+The introduction of variable selection systems generally
+results in a dramatic improvement in ANN performance.
+Input selection (IS) is an example of the adaptation of an
+EA to this problem.
+This is a selection mechanism of the variables of a fixed
+dataset, based on the EA GenD [26] (Fig. 7). The IS
+system becomes operative on a population of ANNs,
+each of them capable of extracting a different pool of
+independent variables. Through the GenD EA, the
+different ‘hypotheses’ of variable selection, generated
+by each ANN, change over time, generation after
+generation. When the EA no longer improves, the process
+stops, and the best hypothesis of the input variables is
+selected and employed on the testing subset. The
+goodness-of-fit rule of GenD promotes, at each genera-
+tion, the best testing performance of the ANN model
+with the minimal number of inputs.
+An example of an application of IS system is described
+in the paper by Buscema et al. [27], which also contains
+a theoretical description of the neuroevolutionary
+systems.
+As is shown in Table 1, which refers to the papers in
+which variables reduction has been performed, the
+application of ANNs to a selected subset of variables
+has systematically yielded to an improvement of pre-
+dictive capacity. These results demonstrated that deep
+mining of such highly nonlinear data could extract
+enough information to construct a near optimum
+Copyright © Lippincott Williams & Wilkins. Unauthorized reproduction of this article is prohibited.Neural networks Grossi and Buscema 1051
+Fig. 7
+IS system selects the best input variables set
+New population
+Parents Children
+A 1 A 2 A 1 B 2
+B 1 B 2 B 1
+Evolution
+A 2
+Input selection (IS). Each individual of the population codes a subset of different independent variables. The best solution along the generation
+process consists in the smallest number of independent variables able to reach up the best classification rate in testing phase.
+Effect of variables reduction in enhancing the classifica-
+tion performance of ANNs
+Table 1
+Papers
+Andriulli et al. (a)
+[28]
+Andriulli et al. (b)
+[28]
+Pagano et al. [29]
+Sato et al. [30]
+Pace et al. [31]
+Lanher et al. [32]
+No. of
+variables Overall
+accuracy
+(%) No. of
+variables
+Overall
+accuracy E (%)
+45 64.5 34 79.6
+45 69.0 31 88.6
+24
+199
+101
+37 74.4
+75.0
+77.0
+96.6 9
+60
+44
+30 89.4
+83.5
+100
+98.4
+ANN, artificial neural network.
+classifier/predictor able to provide effective support for
+the physician’s decision, after an appropriate data
+processing
+Discussion
+As can be seen from the general literature, and from the
+papers after this introduction in this special issue of
+European Journal of Gastroenterolgy and Hepatology, ANNs
+constitute new, potent, computational tools able to
+outperform the diagnostic and prognostic accuracy of
+classical statistical methods.
+In complex gastrointestinal disorders such as, for
+example, dyspeptic syndrome, chronic pancreatitis or
+nonerosive reflux oesophagitis (NERD), many symptoms
+at presentation in an uninvestigated patient might lie at
+the crossroads of a group of disorders. For instance, they
+could be an expression of functional disorders as well as of
+organic diseases. By definition, complex chronic diseases
+have heterogeneous origins in which various mechanisms
+participate to a different extent in different patients.
+Consequently, techniques belonging to classical statistics,
+such as discriminant analysis, which assume linear
+functions underlying key pathogenetic factors, normal or
+quasi normal value distribution, and reduced contribution
+of outliers through average computation, might incor-
+rectly represent the complex dynamics of sociodemo-
+graphic, clinical, genetic, and environmental features that
+may interact in these patients. ANNs, to the contrary,
+take advantage of modern mathematical theories inspired
+by the life sciences and seem to be able to extract from
+the data information that is not considered useful by
+traditional approaches.
+The IS operated by the EAs deserves a specific comment.
+The potential impact of this particular subset of variables
+could be high in routine practice, reducing substantially
+the number of questions about present symptoms and
+the number of clinical and laboratory data collected,
+with obvious advantages from a logistic and economic
+point of view.
+Therefore, from a medical perspective, this review has
+clearly demonstrated that available data, unusable by
+conventional assessment methods, need not be consid-
+ered as being ‘useless’. Such data can be, and actually is
+precious, providing, after appropriate processing, helpful
+information and effective support for the doctor’s and the
+patient’s decisions.
+We have also seen that fine results were reached in the
+optimization phase using more costly, complex systems
+Copyright © Lippincott Williams & Wilkins. Unauthorized reproduction of this article is prohibited.1052 European Journal of Gastroenterology & Hepatology 2007, Vol 19 No 12
+composed of neural networks and evolutionary subsys-
+tems working together as hybrid organisms. Such proto-
+cols require a consistent level of expertise. Their use is
+recommended only when the input–output relationships
+are sufficiently complex, as in the examples in this
+review. When this criterion is not met it is simpler and
+less expensive to use traditional methods, such as
+discriminant analysis.
+A second important feature is represented by the
+improved transfer of evidence derived from clinical
+research to single patient level.
+Both physicians and their patients are put under pressure
+by the potential, as well as actual, risk of future disease
+and by the uncertainty, and the associated anxiety, of
+anticipating the outcome and treatment of a disease. The
+increasing demand of individualized treatment, of spe-
+cific diagnoses suited to a single subject, and of accurate
+prognosis by modeling risk factors in the context of that
+particular individual requires a new age of statistics, the
+statistics of the individual.
+Physicians are more and more aware of the fact that the
+individual patient is not an average representative of the
+population. Rather she/he is a person with unique
+characteristics, predicaments, and types and levels of
+sensibility; they are also aware that prevention (primary,
+secondary, tertiary) can be effective on the population
+but not necessarily for the targeted individual patient,
+and that reaching the objective of a prevention guideline
+based on a specific protocol does not necessarily mean a
+favourable outcome in that given individual. Clinical
+epidemiology and medical statistics are not particularly
+suited to answering specific questions at the individual
+level. They have, after all, been developed primarily to
+focus on groups of individuals and not on single
+individuals.
+We know that any kind of statistical inference loses its
+meaning in the absence of a ‘sample’, which by definition
+requires a number greater than 1. For this reason,
+predictive models can fail dramatically when applied to
+the single individual.
+When applied to a single individual, the degree of
+confidence for a model that on average has an accuracy
+rate of 80% at a group level, can drop substantially.
+Suppose that a predictive model for diagnostic or
+prognostic classification has been developed and vali-
+dated in a study data set, and that it allows an overall
+accuracy of 80%. Suppose that the confidence interval of
+this predictive rate is 10% (75–85%). We now assess a
+group of new individuals with our tool. We can reasonably
+expect to make classification mistakes in the order of
+15–25%. In other words 15–25, out of 100 new patients
+would be misclassified. If I am a new patient and I have
+been classified in a certain way (e.g. diseased), I might
+think that I have an 80% chance of being correctly
+classified (75% in the worst and 85% in the best case).
+Unfortunately, the confidence interval of this classifica-
+tion at my level would not be equal to that of the group
+as, in the case of misclassification, I would suffer from an
+all-or-nothing situation (correct diagnosis vs. incorrect
+diagnosis). This would mean a 100% difference. In other
+words, at single participant level the confidence interval
+would be wider than the mean accuracy rate at a group
+level.
+As is not possible to transform the single individual into
+a group of individuals on which one performs some
+statistics, one could do the opposite; that is, treat a single
+individual with a group of statistics. In other words, this
+means using several independent classification models,
+which make different errors while retaining a similar
+average predictive capacity, on the same individual.
+ANNs allow this.
+It is theoretically possible to train hundreds of neural
+networks with the same data set, resulting in a sizeable
+assembly of ANNs with a similar average performance but
+with the predisposition to make different mistakes at
+individual level owing to the fact that they differ slightly
+in their architecture, topology, learning laws, starting
+weights of interconnections between nodes, order of
+presentation of cases during training cycle, number of
+training cycles, and so on.
+In this way, it is possible to produce a large set of neural
+networks with high training variability able to process
+independently a set of new patients to predict a
+diagnostic category, a survival plausibility, or a drug
+dosage level. For each patient, several hundreds of
+answers would be generated. Therefore, when a new
+patient has to be classified, thanks to this sort of
+‘parliament of independent judges’ acting simultaneously,
+a specific nonparametric distribution of output values
+could be obtained with resulting descriptive statistics
+(mean, mode, median, measures of variance, confidence
+interval, etc.). It is interesting to note that the
+classification output of neural networks is generally
+expressed according a fuzzy logic scheme, along a
+continuous scale of ‘degree of membership’ to the target
+class, ranging from 0 (minimum degree of membership)
+to 1 (maximum degree of membership). According
+to the above reasoning, it could be possible to establish
+a suitable degree of confidence of a specific classification
+in the individual/patient, overcoming the dogma,
+which excludes the possibility of making statistical
+inference when a sample is composed by just one
+individual.
+Copyright © Lippincott Williams & Wilkins. Unauthorized reproduction of this article is prohibited.Neural networks Grossi and Buscema 1053
+A word of caution: these theories must be proved in the
+real world. As with medications, these systems also need
+to have their effectiveness studied in routine medical
+settings. We need to demonstrate that the use of
+application software based on trained neural networks
+can increase the quality of medical care delivery and/or
+reduce costs. We feel optimistic, and using the words of
+D. Hollander [33] ‘Given the rapid advances in computer
+hardware, it is likely that sophisticated ANN program-
+ming could be made available to clinics and outpatient
+care facilities and could save time and resources by
+guiding the screening clinician towards the most rapid
+and appropriate diagnosis and therapy of patients with
+gastrointestinal problems.’
+Acknowledgements
+The authors want to express their gratitude to Alessandra
+Mancini for her precious help in reviewing the literature
+and assisting in manuscript preparation.
+Conflict of interest: none declared.

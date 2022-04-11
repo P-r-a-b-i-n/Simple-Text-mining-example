@@ -1,0 +1,203 @@
+
+The continuous updating of data under their management creates a dynamic bank, whose rules are automatically refined by the ANNs as the problem in question
+evolves through time. This passage from an early
+categorization to a later, finer, and more complex one is
+managed by the ANN alone, using the new cases as data
+to learn about the new category.
+Fig. 4
+y
+Happiness
+Artificial neural networks can generalize,
+then predict and recognize
+Money
+x
+Once an ANN has been trained with suitable data to find
+the hidden rules governing a certain phenomenon, it is
+then able to correctly generalize to data it has never seen
+before (new, dirty, incomplete data, etc.).
+Nonlinear relation between money and happiness.
+When are they used?
+According to Fig. 3, the more money a person has, the
+happier he is. In this scenario, sampling of experimental
+data should offer the possibility of easily infering the
+relation and it would be worthless to use an ANN to
+analyze such a problem; unfortunately this scenario, like
+others in real life, is actually more an exception rather
+than a rule.
+In real life, the relations are generally more complex, such
+as that presented in Fig. 4. In fact, as many of us can
+witness, an increase in earning can sometimes produce
+fears of losing money or uncertainties over how to invest
+this money, and this can reduce the feeling of happiness.
+The complex relation described in Fig. 4 does not permit
+us to understand, at first glance, from the data gathered
+experimentally, the relationship between money and
+happiness. In situations such as this, it makes sense to
+use an ANN to define precisely the relationship between
+money and happiness.
+Artificial neural networks reveal the hidden rules
+of a problem
+ANNs are data processing mechanisms that do not follow
+specific rules to process data, but which use the data they
+The most typical problem that an ANN can deal with can
+be expressed as follows: given N variables, about which it
+is easy to gather data, and M variables, which differ from
+the first and about which it is difficult and costly to
+gather data, assess whether it is possible to predict the
+values of the M variables on the basis of the N variables.
+When the M variables occur subsequently in time to the
+N variables, the problem is described as a prediction
+problem; when the M variables depend on some sort of
+static and/or dynamic factor, the problem is described as
+one of recognition and/or discrimination and/or extraction
+of fundamental traits.
+To correctly apply an ANN to this type of problem, we
+need to run a validation protocol. We must start with a
+good sample of cases, in each of which the N variables
+(known) and the M variables (to be discovered) are both
+known and reliable.
+The sample of complete data is needed to:
+K
+K
+train the ANN, and
+assess its predictive performance.
+Copyright © Lippincott Williams & Wilkins. Unauthorized reproduction of this article is prohibited.Neural networks Grossi and Buscema 1049
+Fig. 5
+Random protocol
+Database
+Random
+Selection
+Sample 1b
+Sample 2b
+... ... ... ...
+Sample 5b
+Sample 1a
+Sample 2a
+... ... ... ..
+Sample 5a
+Training
+Testing
+ANN 1a
+ANN 2a
+... ... ..
+ANN 5a LogR 1a
+LogR 2a
+... ... ..
+LogR 5a
+ANN 1b
+ANN 2b
+... ... ..
+ANN 5b LogR 1b
+LogR 2b
+... ... ..
+LogR 5b
+Testing
+Training
+The 5 # 2 cross-validation protocol.
+3. At the end of the training phase, the weight matrix
+produced by the ANN is saved and frozen together
+with all of the other parameters used for the training
+4. With the weight matrix having saved the testing set,
+which it has not seen before, is shown to the ANN so
+that in each case the ANN can express an evaluation
+based on the previously carried out training, this
+operation takes place for each input vector and every
+result (output vector) is not communicated to the
+ANN
+5. The ANN is in this way evaluated only in reference to
+the generalization ability that it has acquired during
+the training phase
+6. A new ANN is constructed with identical architecture
+to the previous one and the procedure is repeated
+from point 1
+Where are they used? Artificial neural networks
+and problems in need of solution
+In theory, the number of types of problem that can be
+dealt with using ANNs is limitless, as the methodology is
+broadly applicable, and the problems spring up as fast as
+the questions that society, for whatever reason, poses. So,
+let us remind ourselves of the criteria that must be
+satisfied for the adoption of an ANN to be worthwhile:
+The problem is a complex one
+Other methods have not produced satisfactory results
+K An approximate solution to the problem is valuable, not
+only a certain or best solution
+K An acceptable solution to the problem offers great
+savings in human and/or economic terms
+K There exists a large case history demonstrating the
+‘strange’ behavior to which the problem pertains
+K
+The validation protocol uses part of the sample to train
+the ANN (training set), whereas the remaining cases are
+used to assess the predictive capability of the ANN
+(testing set or validation set).
+In this way we are able to test the reliability of the ANN
+in tackling the problem before putting it into operation.
+K
+Fig. 6
+Different types of protocol exist in literature, each
+presenting advantages and disadvantages. One of the most
+popular employed is the so-called 5 # 2 cross-validation
+protocol [25], which produces 10 elaborations for every
+sample. It consists in dividing the sample five times in
+two different subsamples, containing similar distribution
+of participants and controls (Fig. 5).
+Description of the standard validation protocol
+Data
+Expert
+systems
+Artificial neural
+networks
+The protocol, from the point of view of a general
+procedure, consists of the following steps:
+1. Subdividing the database in a random way into two
+subsamples: the first named training set and the
+second called testing set
+2. Choosing a fixed ANN, and/or another model, which is
+trained on the training set, in this phase the ANN
+learns to associate the input variables with those that
+are indicated as targets
+Physical
+models
+Schematic comparison of artificial neural network (ANN) with other
+analysis techniques. Compared with other analysis techniques, ANNs
+are useful when one has a problem with a lot of available data but no
+good theory to explain them.
+Copyright © Lippincott Williams & Wilkins. Unauthorized reproduction of this article is prohibited.1050 European Journal of Gastroenterology & Hepatology 2007, Vol 19 No 12
+Figure 6 summarizes the conditions that best claim for
+neural networks analysis.
+A special feature of neural networks analysis:
+variables selection
+ANNs are able to simultaneously handle a very high
+number of variables notwithstanding their underlying
+nonlinearity. This represents a tremendous advantage in
+comparison with classical statistics models in a situation
+in which the quantity of available information is
+enormously increased and nonlinearity dominates. With
+ANNs one is concerned neither about the actual number
+of variables nor about their nature. Owing to their
+particular mathematic infrastructure, ANNs have no
+limits in handling the increasing amounts of variables
+that constitute the input vector for the recursive
+algorithms.
+Discriminant analysis, logistic regression, or other linear
+or semilinear techniques typically employ a limited
+number of variables in building up their model: those
+with a prominent linear correlation with the dependent
+variable. In other words, for them a specific criterion
+exists, for example a correlation index, which indicates
+which of the variables available has to be used to build a
+predictive model addressed to the particular problem
+under evaluation.
+ANNs, being a sort of universal approximation system, are
+able to use a wider range of information available, and
+also variables with a very poor linear correlation index. For
+this reason, the natural approach is to include all of the
+variables that, according to clinician experience, might
+have an a priori connection with the problem being
+studied. When the ANNs are exposed to all these
+variables of the data set, they can very easily approximate
+all the information available during the training phase.
+This is the strength, but unfortunately also the weakness,
+of ANNs.
+

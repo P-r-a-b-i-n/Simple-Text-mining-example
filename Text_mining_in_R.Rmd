@@ -1,0 +1,143 @@
+---
+title: "Text mining"
+author: "Prabin Kharel"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Making a Corpus to perform text mining
+
+```{r}
+#install.packages("tm") 
+#Uncomment above line to install "tm" package if not already installed. This package is need for text mining.
+library(tm)
+
+#provide a directory to a variable in which the text documents to be mined are stored 
+file <- DirSource('txt/')
+
+#making corpus
+fileCorpus <- Corpus(file)
+
+#inspecting a corpus. The number inside the [] is the file which we intend to inspect.
+inspect(fileCorpus[3])
+```
+
+### Pre-processing
+
+Pre-processing of the data involves cleaning or tidying the data. We get rid of the punctuation, numbers, white spaces, typos and stopwords that don't require analysis. Also since R is case-sensitive, it will assume "Read" and "read" to be separate words. To remove this redundancy of words, all the words need to be made in lower case. Also we will stem the words from Corpus.
+
+#### Removing Whitespaces
+
+```{r}
+fileCorpus <- tm_map(fileCorpus, stripWhitespace) 
+inspect(fileCorpus[1]) 
+```
+
+#### Removing Punctuation
+
+```{r}
+fileCorpus <- tm_map(fileCorpus,removePunctuation) 
+inspect(fileCorpus[1]) 
+```
+
+#### Removing Numbers
+
+```{r}
+fileCorpus <- tm_map(fileCorpus, removeNumbers) 
+inspect(fileCorpus[1]) 
+```
+
+#### Changing text to lower case
+
+```{r}
+fileCorpus <- tm_map(fileCorpus, tolower) 
+inspect(fileCorpus[1]) 
+```
+
+#### Removing Stopwords
+
+```{r}
+stopwords("english")
+```
+
+```{r}
+fileStopwords <- c(stopwords("english")) 
+fileCorpus <- tm_map(fileCorpus, removeWords, fileStopwords) 
+inspect(fileCorpus[1]) 
+```
+
+#### Stemming
+
+Stemming a word means to reduce the word to it's base form or the root form. Since our goal is to get information from the text, we do not need the words repeating in different forms. We would rather prefer to use only 'go' for, 'go','went' and 'gone'.
+
+```{r}
+
+library(SnowballC) 
+fileCorpusCopy <- fileCorpus 
+tm_map(fileCorpus, stemDocument) 
+
+```
+
+```{r}
+inspect(fileCorpus[1])
+```
+
+### Term Document Matrix
+
+A term document matrix gives us the frequency of the terms that occurs in the corpus. We are going to make a term document matrix with words having lengths between 5 and 10.
+
+```{r}
+
+fileTdm <- TermDocumentMatrix(fileCorpus, control =list(wordLengths=c(5,10))) 
+inspect(fileTdm)
+```
+
+#### Plotting top 5 most frequent words
+
+```{r}
+Tdm_m <- as.matrix(fileTdm)
+# Sort by decreasing frequency
+Tdm_f <- sort(rowSums(Tdm_m),decreasing=TRUE)
+Tdm_n <- data.frame(word = names(Tdm_f),freq=Tdm_f)
+# Inspect the top 5 most frequent words
+head(Tdm_n, 5)
+```
+
+```{r}
+# Plot the most frequent words
+barplot(Tdm_n[1:5,]$freq, las = 2, names.arg = Tdm_n[1:5,]$word,
+        col ="lightblue", main ="Top 5 most frequent words",
+        ylab = "Word frequencies")
+```
+
+#### Finding Association with words
+
+```{r}
+findAssocs(fileTdm, terms = c("artificial"), corlimit = 0.8) 
+```
+
+### Generating Wordcloud
+
+```{r}
+#install.packages("wordcloud") 
+library(wordcloud)
+set.seed(1234)
+wordcloud(words = names(Tdm_f), freq = Tdm_f, min.freq = 7, random.order=F, rot.per= 0.3,max.words = 100, colors=brewer.pal(8,"Dark2"))
+```
+
+### Clustering of Words
+
+```{r}
+# remove sparse terms 
+fileTdm2 <- removeSparseTerms(fileTdm,sparse = 0.3) 
+m2 <- as.matrix(fileTdm2) 
+# cluster terms 
+distMatrix <- dist(scale(m2)) 
+fit <- hclust(distMatrix, method="ward.D") 
+plot(fit, sub = "Cluster") 
+# cut tree into 10 clusters 
+rect.hclust(fit, k=10) 
+```

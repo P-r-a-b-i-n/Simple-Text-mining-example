@@ -1,0 +1,197 @@
+﻿Introduction to artificial neural networks
+
+Introduction rhythms arise from stochastic, nonlinear biological
+mechanisms interacting with fluctuating environments.
+We need, for this reason, a special kind of mathematics
+that has, historically, remained cast away from the
+medical context.
+The aim of this article is to discuss the possible
+advantages derived from the use of artificial neural
+networks (ANNs), which are some of the more advanced
+artificial intelligence tools today available, as an appro-
+priate means of answering the emerging issues and
+‘demands’ of medical science, and in particular of
+gastroenterology.
+We are currently facing a paradox of sorts in which the
+amount of progress in the quality of the delivery of
+medical care in the everyday routine context of gastro-
+intestinal diseases in the ‘real world’ is far from being
+proportional to the amount of scientific knowledge built
+up in basic science.
+Different explanations can be given for this paradox. The
+increasing amount of clinical, laboratory, and diagnostic
+imaging information data requires more and more specific
+tools able to gather and recompose this information, and
+these tools are not easily available today as the traditional
+statistical reductionistic approach tends to ‘see’ things
+individually, to simplify, and to look at one single element
+at a time.
+The increasing complexity of clinical data requires the
+use of mathematical models that are able to capture
+the key properties of the entire ensemble, including the
+linkages and hubs. The advancement of knowledge and
+the progress of understanding the nature of bodily
+rhythms and processes have shown that complexity and
+nonlinearity are ubiquitous in living organisms. These
+European Journal of Gastroenterology & Hepatology 2007, 19:1046–1054
+Keywords: artificial neural networks, diagnosis, evolutionary algorithms,
+nonlinearity, prognosis
+a
+Bracco Spa Medical Department, Milan, Italy and b Semeion Research Centre
+for Science and Communication, Trigoria, Rome
+Correspondence to Enzo Grossi, Medical Department, Bracco SpA,
+Via E. Folli 50 20136 Milano
+E-mail: enzo.grossi@bracco.com
+Received 29 August 2007 Accepted 29 August 2007
+In simple words, we have a problem of quantity and
+quality of medical information, which can be more
+appropriately addressed by the use of new computational
+tools such as ANNs.
+What are artificial neural networks?
+ANNs are artificial adaptive systems that are inspired by
+the functioning processes of the human brain [1]. They
+are systems that are able to modify their internal
+structure in relation to a function objective. They are
+particularly suited for solving problems of the nonlinear
+type, being able to reconstruct the fuzzy rules that govern
+the optimal solution for these problems.
+The base elements of the ANN are the nodes, also called
+processing elements (PE), and the connections. Each
+node has its own input, from which it receives commu-
+nications from other nodes and/or from the environment
+and its own output, from which it communicates with
+other nodes or with the environment. Finally, each node
+has a function f through which it transforms its own global
+input into output (Fig. 1). Each connection is character-
+ized by the strength with which pairs of nodes are excited
+or inhibited. Positive values indicate excitatory connec-
+tions, the negative ones inhibitory connections [2,3]. The
+connections between the nodes can modify themselves
+c 2007 Wolters Kluwer Health | Lippincott Williams & Wilkins
+0954-691X #
+Copyright © Lippincott Williams & Wilkins. Unauthorized reproduction of this article is prohibited.Neural networks Grossi and Buscema 1047
+Fig. 1
+Fig. 2
+Dendrites
+Axons
+Input (n)
+1 1
+Input
+Neuron
+2
+3
+4 4
+5
+6 6
+7
+8 . . . . .
+n
+Output
+= Weight
+Hidden
+1
+2
+3
+4 4
+5
+. . . . .
+n
+Diagram of a single processing element (PE) containing a neuron,
+weighted dendrites, and axons to process the input data and calculate
+an output.
+Output
+over time. This dynamic starts a learning process in the
+entire ANN [4,5]. The way through which the nodes
+modify themselves is called ‘Law of Learning’. The total
+dynamic of an ANN is tied to time. In fact, for the ANN
+to modify its own connections, the environment has to
+necessarily act on the ANN more times [6]. Data are the
+environment that acts on the ANN. The learning process
+is, therefore, one of the key mechanisms that characterize
+the ANN, which are considered adaptive processing
+systems. The learning process is one way to adapt the
+connections of an ANN to the data structure that make
+up the environment and, therefore, a way to ‘understand’
+the environment and the relations that characterize it
+[7–10].
+Neurons can be organized in any topological manner
+(e.g. one- or two-dimensional layers, three-dimensional
+blocks or more-dimensional structures), depending on
+the quality and amount of input data. The most common
+ANNs are composed in a so-called feed forward topology
+[11,12]. A certain number of PEs is combined to an input
+layer, normally depending on the amount of input
+variables. The information is forwarded to one or more
+hidden layers working within the ANN. The output layer,
+as the last element of this structure, provides the result.
+The output layer contains only one PE, whether the
+result is a binary value or a single number. Figure 2
+represents the most popular architecture of neural
+networks: back propagation [13,14].
+All PEs within the ANN are connected to other PEs in
+their neighbourhood. The way these connections are
+made might differ between the subtypes of neural
+networks [15,16]. Each of these connections has a so-
+called weight, which modifies the input or output value.
+The value of these connection weights is determined
+during the training process. This functionality is the basis
+for the ANN’s learning capability. Therefore, it is
+important to understand that there are no classification
+1
+2
+3
+. . . . .
+n
+Back propagation neural network architecture.
+rules written into the algorithm. The network just learns
+to understand and classify input patterns from examples.
+Basic neural networks can normally be obtained with
+statistical computer software packages. Some companies
+offer specialized software to work with different neural
+networks (e.g. NeuralWorks Professional by NeuralWare
+Inc., Carnegie, Pennsylvania, USA [17] or CLEMEN-
+TINE Data Mining tool by Integral Solutions Limited,
+UK [18]). These software packages must be flexible and
+easy to handle for use in widespread purposes.
+Properties of artificial neural networks
+ANNs are high in pattern recognition-like abilities, which
+are needed for pattern recognition and decision-making
+and are robust classifiers with the ability to generalize and
+make decisions from large and somewhat fuzzy input
+data. ANNs are modeling mechanisms particularly skilled
+in solving nonlinear problems. In technical terms, we can
+say that a system is not complex when the function
+representing it is linear, that is when these two equations
+apply:
+f ðcxÞ ¼ cf ðxÞ
+and
+f ðx 1 þ x 2 Þ ¼ f ðx 1 Þ þ f ðx 2 Þ
+A complex, nonlinear system violates one or both of these
+conditions. Briefly, the more the function y = f(x) is
+nonlinear, the more valuable it is to use an ANN to try
+and understand the rules, R, which govern the behavior
+inside the black box. If we take a Cartesian chart in which
+axis x represents the money a person gets, and axis y
+measures the degree of happiness that person obtains as a
+result, then:
+Copyright © Lippincott Williams & Wilkins. Unauthorized reproduction of this article is prohibited.1048 European Journal of Gastroenterology & Hepatology 2007, Vol 19 No 12
+receive to discover the rules governing them [19,20].
+This makes ANNs particularly useful in solving a problem
+for which we have the data involved, but do not know
+how those data are related to one another.
+Fig. 3
+y
+Artificial neural networks are adaptive and dynamically
+discover the fuzzy rules that connect various sets
+of data
+Happiness
+Money
+x
+Linear relation between money and happiness.
+This means that if they receive certain data in one phase,
+ANNs focus on certain rules; but if they later receive new
+and different data, ANNs will adjust their rules in
+accordance, integrating the old data with the new, and
+they can do this without any external instruction
+[21–24].
+
